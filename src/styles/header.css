@@ -1,0 +1,212 @@
+/* Base header */
+.header {
+  /* border: 2px solid red; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(201, 31, 63, 0.2);
+  z-index: 1000;
+  transition: all var(--transition-base);
+  color: #f0f0f0;
+}
+
+.header.scrolled {
+  /* border: 2px solid white; */
+  background-color: rgba(10, 10, 10, 0.98);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+  border-bottom-color: rgba(201, 31, 63, 0.4);
+}
+
+.header-content {
+  /* border: 2px solid green; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md) 0;
+  gap: 8px;
+}
+
+.logo {
+  /* border: 2px solid yellow; */
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  height: 50px;
+  /* display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--color-crimson), var(--color-yellow));
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: var(--font-size-xl);
+  color: var(--color-black);
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(201, 31, 63, 0.3); */
+}
+
+.saffu-logo {
+  /* border: 2px solid blue; */
+  height: 240px;
+  width: 240px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Desktop nav */
+.nav {
+  display: flex;
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+/* Menu (mobile) open state */
+.nav.active {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(
+    --color-deep-brown
+  ); /* dark background for mobile menu */
+  border-bottom: 1px solid rgba(201, 31, 63, 0.3);
+  padding: var(--spacing-lg) 0;
+  flex-direction: column;
+  display: flex;
+  color: #f8f8f8; /* ensure readable text on dark background */
+}
+
+/* Nav list */
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: var(--spacing-lg);
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Nav link */
+.nav-link {
+  background: none;
+  border: none;
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  cursor: pointer;
+  padding: var(--spacing-sm) var(--spacing-md);
+  transition: all var(--transition-base);
+  position: relative;
+  border-radius: var(--radius-sm);
+  color: #f0f0f0;
+  letter-spacing: 0.3px;
+}
+
+/* underline / indicator */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--accent-primary),
+    var(--accent-secondary)
+  );
+  transition: width var(--transition-base);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  transform: translateX(3px);
+}
+
+/* Hamburger button (mobile) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  gap: 6px;
+  z-index: 1001;
+  padding: var(--spacing-sm);
+}
+
+/* three bar hamburger */
+.hamburger-bar {
+  width: 25px;
+  height: 3px;
+  background-color: #f0f0f0;
+  border-radius: var(--radius-sm);
+  transition: transform var(--transition-base), opacity var(--transition-base);
+  transform-origin: center;
+}
+
+/* animate bars when active */
+.menu-toggle.active .hamburger-bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.menu-toggle.active .hamburger-bar:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+.menu-toggle.active .hamburger-bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.menu-toggle:hover .hamburger-bar {
+  background-color: var(--accent-primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    padding: 0 var(--spacing-lg);
+    width: 100%;
+  }
+
+  .nav-link {
+    width: 100%;
+    text-align: left;
+    padding: var(--spacing-sm) var(--spacing-lg);
+  }
+
+  .nav-link::after {
+    bottom: 0;
+    width: 0;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 3px;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+  }
+}

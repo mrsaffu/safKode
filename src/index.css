@@ -1,0 +1,239 @@
+/* ------------------------------
+   Root Theme Variables
+------------------------------ */
+
+
+.light {
+  --bg-color: #f7f7f7;
+  --text-color: #1a1a1a;
+  --text-secondary: #555;
+  --btn-primary: #d40046;
+  --btn-secondary: #e4e4e4;
+}
+
+.dark {
+  --bg-color: #0a0a0a;
+  --text-color: #ffffff;
+  --text-secondary: #cfcfcf;
+}
+
+/* ------------------------------
+   Landing Section Base
+------------------------------ */
+.landing {
+  padding: 120px 20px;
+  background: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.landing-content {
+  max-width: 1250px;
+  margin: auto;
+  width: 100%;
+}
+
+.landing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+}
+
+@media (max-width: 900px) {
+  .landing-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+/* ------------------------------
+   Title & Gradient Text
+------------------------------ */
+.main-name {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 10px;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #ff004c, #8a2be2, #00e6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-subtext {
+  background: linear-gradient(90deg, #8a2be2, #00e6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.2rem;
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+.highlight-name {
+  font-weight: 800;
+}
+
+/* ------------------------------
+   Typing Animation Container
+------------------------------ */
+.typing-roles {
+  font-size: 1.5rem;
+  margin-top: 8px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+/* ------------------------------
+   Elevator Pitch & Description
+------------------------------ */
+.elevator-pitch {
+  margin-top: 20px;
+  color: var(--text-secondary);
+  font-size: 1.15rem;
+  line-height: 1.6;
+  max-width: 550px;
+}
+
+.landing-description {
+  margin-top: 10px;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 580px;
+}
+
+/* ------------------------------
+   Action Buttons
+------------------------------ */
+.landing-actions {
+  margin-top: 30px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: 0.25s ease;
+}
+
+.btn-primary {
+  background: var(--btn-primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.2);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: var(--btn-secondary);
+  color: var(--text-color);
+}
+
+.btn-secondary:hover {
+  background: #333;
+  transform: translateY(-2px);
+}
+
+/* ------------------------------
+   Theme Toggle Button
+------------------------------ */
+.theme-toggle {
+  background: var(--accent2);
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 0.95rem;
+  border-radius: 10px;
+}
+
+.theme-toggle:hover {
+  filter: brightness(1.15);
+}
+
+/* ------------------------------
+   Visual / Code Block Styles
+------------------------------ */
+.landing-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.code-block {
+  background: #111;
+  padding: 22px;
+  border-radius: 14px;
+  width: 320px;
+  color: #00ffbd;
+  font-family: "Fira Code", monospace;
+  border: 1px solid #222;
+  box-shadow: 0 0 18px rgba(255, 0, 76, 0.3);
+  transition: 0.3s ease;
+}
+
+.code-header {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.code-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.code-dot.red { background: #ff4d4d; }
+.code-dot.yellow { background: #ffe066; }
+.code-dot.green { background: #4dcc4d; }
+
+.code-line {
+  margin: 3px 0;
+  font-size: 0.9rem;
+}
+
+/* Floating Accent Circles */
+.accent-circle {
+  position: absolute;
+  border-radius: 100%;
+  filter: blur(50px);
+  opacity: 0.6;
+}
+
+.accent-1 {
+  width: 160px;
+  height: 160px;
+  background: rgba(255, 0, 76, 0.5);
+  top: -50px;
+  left: -40px;
+}
+
+.accent-2 {
+  width: 180px;
+  height: 180px;
+  background: rgba(0, 255, 234, 0.5);
+  bottom: -60px;
+  right: -50px;
+}
+
+/* ------------------------------
+   Scroll Indicator
+------------------------------ */
+.scroll-indicator {
+  margin-top: 60px;
+  color: var(--text-secondary);
+  font-size: 1rem;
+}

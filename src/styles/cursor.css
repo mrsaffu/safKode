@@ -1,0 +1,76 @@
+/* Cursor Follower Styles */
+.cursor-follower {
+  backdrop-filter: blur(1px) !important;
+  transition: all 0.1s ease-out !important;
+}
+
+/* Prevent default cursor */
+body {
+  cursor: none;
+}
+
+/* Magnetic button styles */
+button[data-magnetic] {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+button[data-magnetic]:hover {
+  transform: scale(0.05);
+}
+
+/* Parallax section styles */
+.parallax-section {
+  position: relative;
+  will-change: transform, opacity;
+}
+
+/* Interactive elements enhancement */
+a,
+button,
+.interactive {
+  position: relative;
+  cursor: none;
+}
+
+/* Glow effect on interactive elements */
+a:hover::after,
+button:hover::after,
+.interactive:hover::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(201, 31, 63, 0.3), rgba(255, 215, 0, 0.2));
+  filter: blur(10px);
+  pointer-events: none;
+  z-index: -1;
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  body {
+    cursor: auto;
+  }
+}
