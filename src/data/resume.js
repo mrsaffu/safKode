@@ -278,10 +278,10 @@ export const resumeData = {
       id: 6,
       title: "safKode – Personal Portfolio",
       folderName: "safKode",
-      image: "../../public/Project/safkode/safkode2.png",
-      image2: "../../public/Project/safkode/safkode1.png",
-      image3: "../../public/Project/safkode/safkode3.png",
-      image4: "../../public/Project/safkode/safkode4.png",
+      image: "/public/Project/safkode/safkode2.png",
+      image2: "/public/Project/safkode/safkode1.png",
+      image3: "/public/Project/safkode/safkode3.png",
+      image4: "/public/Project/safkode/safkode4.png",
 
       description:
         "A modern, fast, and fully responsive personal portfolio website built using React, Vite, Tailwind CSS, and Framer Motion. Designed to showcase projects, skills, resume sections, animations, and contact details with a clean, interactive user experience.",
