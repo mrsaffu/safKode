@@ -93,15 +93,19 @@ const Footer = () => {
             <h4>Follow</h4>
             <div className="social-links">
               <motion.a
-                href="#"
+                href="https://github.com/mrsaffu"
                 aria-label="GitHub"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, color: "var(--accent-secondary)" }}
               >
                 GitHub
               </motion.a>
               <motion.a
-                href="#"
+                href="https://www.linkedin.com/in/mrrsaffu/"
                 aria-label="LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, color: "var(--accent-secondary)" }}
               >
                 LinkedIn
